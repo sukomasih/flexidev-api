@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'development'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
       
     steps:
@@ -48,6 +48,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'flexiapp-api'
-          slot-name: 'development'
+          slot-name: 'production'
           package: '*.jar'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_65B0C86468DB45478B0714DDC8582033 }}
