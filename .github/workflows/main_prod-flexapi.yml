@@ -47,9 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          #app-name: 'prod-flexapi'
-          app-name: 'java-app'
+          app-name: 'prod-flexapi'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1B1B43BC854B481297CCA0BFBE992887 }}
-          package: '${{ github.workspace }}/target/*.jar' 
-          #package: '*.jar'
+          package: '*.jar'
