@@ -50,4 +50,5 @@ jobs:
           app-name: 'prod-flexapi'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1B1B43BC854B481297CCA0BFBE992887 }}
-          package: '*.jar'
+          package: '${{ github.workspace }}/target/*.jar' 
+          #package: '*.jar'
